@@ -1,0 +1,212 @@
+.hero h1 {
+    font-size: 4.7em !important;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3.1rem !important;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem !important;
+    }
+}
+
+h1 {
+    font-size: 3.4em !important;
+}
+
+h2 {
+    font-size: 2.8em !important;
+}
+
+h3 span {
+    font-size: 2em !important;
+}
+
+h4 span {
+    font-size: 2em !important;
+}
+
+h3,
+h4,
+h5 {
+    font-size: 2.3em !important;
+}
+
+/* section p, section ul>li, section table, .legenda, section ul+ol>p, section ul li, ol li, button, ul li, ol li {
+    font-size: 1.3em;
+} */
+
+p {
+    font-size: 1.3em;
+}
+
+span {
+    font-size: 1.3em;
+}
+
+.alt-square {
+    padding: 5px 0 0 0px;
+}
+
+p span {
+    font-size: 1em !important;
+}
+
+.half-section ul li {
+    font-size: 1.2em;
+}
+
+table {
+    font-size: 1.3em;
+}
+
+.tabs-estilo1 .nav-link {
+    font-size: 1.1em;
+}
+
+q {
+    font-size: 1.3em;
+}
+
+pre[class*="language-"] {
+    font-size: 1.3em !important;
+}
+
+/* .accordion {
+    font-size: 1.3em !important;
+} */
+
+.overlay-content p {
+    font-size: 1.3em !important;
+}
+
+.tabela-1 table thead tr {
+    font-size: 0.9em !important;
+}
+
+.tabela-2 table thead tr {
+    font-size: 0.9em !important;
+}
+
+#agil p {
+    font-size: 1.3em !important;
+}
+
+#vf p {
+    font-size: 1.3em !important;
+}
+
+#mediumblockquote {
+    font-size: 1.4em !important;
+}
+
+.jBox-content {
+    font-size: 1.2em !important;
+}
+
+.titulobox {
+    font-size: 1.7em !important;
+}
+
+.vcsabia p {
+    font-size: 1.3em;
+}
+
+.saibamais p {
+    font-size: 1.3em;
+}
+
+.pensenisso p {
+    font-size: 1.3em;
+}
+
+.importante p {
+    font-size: 1.3em;
+}
+
+/* .pdf p {
+    font-size: 1.2em;
+} */
+
+.tabela table thead tr {
+    font-size: 1.1em;
+}
+
+.tabs-estilo3 .tab-tabs .nav-link {
+    font-size: 1.1em;
+}
+
+#card-8 {
+    width: 15em;
+    height: 27em;
+    margin: 25px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#card-9 {
+    width: 15em;
+    height: 27em;
+    margin: 25px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.text-white {
+    color: #000;
+}
+
+.accordion .accordion-list a {
+    font-size: 1.3em;
+}
+
+.accordion .accordion-list ul li ul li {
+    font-size: 1.3em;
+}
+
+#accordion .accordion-card__body {
+    font-size: 1.3em;
+}
+
+.tabs label {
+    font-size: 1.3em;
+}
+
+.tabs input[type="radio"]:checked+label {
+    font-size: 1.3em;
+}
+
+.tabs .tab-bs ul li {
+    font-size: 1.3em;
+}
+
+.nav-tabs .nav-link.active {
+    font-size: 1.3em;
+}
+
+.tab-content>.active {
+    font-size: 1.3em;
+}
+
+.scrumcard .scrumcontent span {
+    font-size: 1.2em !important;
+}
+
+.audioplayer-time {
+    font-size: 1.1em;
+}
+
+.icon-block-description p {
+    font-size: 1.3rem;
+}
+
+.chapter-point {
+    font-size: 1.3rem;
+}
+
+.section-subtitle,
+.section-heading h2 {
+    font-size: 1.3rem !important;
+}

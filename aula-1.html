@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+
+
+<!-- jQuery -->
+<script src="libs/vendor/jquery/jquery-3.6.4.js"></script>
+<script src="libs/vendor/jquery/jquery-3.6.4.min.js"></script>
+
+<script src="libs/js/ajustarMargensMoodle.js"></script>
+
+
+<html lang="pt-br" class="no-touch">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=11;IE=Edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>SENAI</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="SENAI-SP">
+
+    <!-- Favicons -->
+    <link href="libs/img/_template/favicon.png" rel="icon">
+    <link href="libs/img/_template/favicon.png" rel="apple-touch-icon">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="libs/fonts/font-awesome-4.7.0/css/font-awesome.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="libs/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="libs/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="libs/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="libs/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="libs/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="libs/vendor/swiper/swiper-bundle.css" rel="stylesheet">
+    <link href="libs/vendor/audioplayer/css/audioplayer.css" rel="stylesheet">
+    <link href="libs/vendor/youtube/youtube-chapters.min.css" rel="stylesheet">
+    <link href="libs/vendor/youtube/darkscroll.css" rel="stylesheet">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Zoom  -->
+    <link href="libs/vendor/zoom/jquery.fancybox.css" rel="stylesheet">
+
+    <!-- Menu CSS -->
+    <link rel="stylesheet" href="libs/vendor/swipe/css/swipe.css">
+    <link rel="stylesheet" href="libs/vendor/swipe/css/demo.css">
+    <link rel="stylesheet" href="libs/vendor/swipe/css/skin.css">
+    <script src="libs/vendor/swipe/js/swipe.js"></script>
+
+    <!-- Menu -->
+    <link rel="stylesheet" href="libs/vendor/menu/css/menu.css">
+
+    <!-- Principais Estilos do Template -->
+    <link href="libs/css/style.css" rel="stylesheet">
+
+    <!-- Media Queries -->
+    <link href="libs/css/add-style.css" rel="stylesheet">
+
+    <!-- SCORM -->
+    <script src="libs/vendor/scorm/APIWrapper.js"></script>
+    <script src="libs/vendor/scorm/SCOFunctions.js"></script>
+
+
+
+    <!-- Guides.js -->
+    <link rel="stylesheet" href="libs/vendor/guidejs/guides.css" type="text/css">
+
+    <!-- Fonte e Contraste -->
+    <link id="contraste" href="" rel="stylesheet">
+    <link id="fonte" href="" rel="stylesheet">
+
+    <script src="libs/vendor/youtube/jquery.nicescroll.min.js"></script>
+    <script src="libs/vendor/youtube/jquery.spidochetube.js"></script>
+
+    <!-- Ações JS-->
+    <script src="libs/js/acoes.js"></script>
+
+    <script>
+        //Número da aula
+        aula = 1;
+    </script>
+
+
+
+</head>
+
+<body onLoad="checkRefresh();">
+    <form name="refreshForm">
+        <input type="hidden" name="visited" value="">
+    </form>
+
+    <div class="" data-wow-duration="0.7s" data-wow-delay="0.2s">
+        <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+        </div>
+        <div class="right-border wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+        </div>
+        <div class="bottom-border wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+        </div>
+        <div class="left-border wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
+        </div>
+    </div>
+
+    <header class="swipe-menu default-theme navbar-area fixed bg-light2">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <nav id="navbar" class="navbar container">
+                <div id="progresso">
+                    <div id="status-progresso"></div>
+                </div>
+                <a href="#/" id="logo" class="logo d-flex align-items-center"><img
+                        src="libs/img/_template/logo/logo-senai.png" alt="" onclick="logo()"></a>
+                <div class="inner-fabs">
+                    <div class="fab round" id="fab8" data-tooltip="Home"><i class="material-icons"
+                            onclick="go(1,1)">home</i></div>
+                    <div class="fab round" id="fab7" data-tooltip="Menu"><i class="material-icons"
+                            onclick="openNav()">menu</i></div>
+                    <div class="fab round" id="fab6" data-tooltip="Ajuda"><i class="material-icons"
+                            data-bs-toggle="modal" data-bs-target="#ajuda">help_outline</i></div>
+                    <div class="fab round" id="fab5" data-tooltip="Tamanho da fonte"><i class="material-icons"
+                            onclick="aplicarFonte();">format_size</i></div>
+                    <div class="fab round" id="fab4" data-tooltip="Contraste"><i class="material-icons"
+                            onclick="aplicarContraste();">brightness_medium</i></div>
+                </div>
+                <div class="fab round" id="fab1" data-tooltip="Configurações"><i class="material-icons"
+                        id="fabIcon">add</i></div>
+
+            </nav>
+            <p class="user-select-none">Planejamento de sistemas de recarga para eletromobilidade
+
+
+            </p>
+        </div>
+    </header>
+    
+
+    <div id="NavPaginas" class="navlateral">
+        <a href="javascript:void(0)" class="closebtn" onclick="openNav()">&times;</a>
+        <div class="navlista">
+            <span id="disciplina"></span>
+            <div id="menu-paginas"></div>
+        </div>
+    </div>
+
+    <section id="banner" class="hero d-flex align-items-center" data-enllax-ratio=".5">
+        <div class="container">
+            <div id="banner-content">
+                <div class="col-md-4">
+                    <div class="section-heading pb-30">
+                        <h1 class="text-uppercase">Planejamento de sistemas de recarga para eletromobilidade
+
+                        </h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="start" data-section-id="1" class="bg-light">
+        <div class="container  p-4 rounded box-title bg-white">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <h3 class="display-4 font-weight-bold text-center">Objetivos</h3>
+                </div>
+            </div>
+
+            <div class="row align-items-left justify-content-left">
+                <div class="col-md-4">
+                    <div class="section-heading">
+                        <h5 class="font-weight-bold text-left pt-3  px-2">Gerais</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 px-2">
+
+                <div class="row justify-content-center ">
+
+                    <div class="icon-block-description">
+                        <p>Planejar a infraestrutura de recarga de acordo com a demanda.
+
+                        </p>
+                        <p>Para atingir esse objetivo, preparamos para você recursos que trazem os seguintes temas:
+
+                        </p>
+                        <ul>
+                            <li>modelos de negócio;
+                            </li>
+                            <li>tarifa de recarga;
+                            </li>
+                            <li>recarregadores;
+                            </li>
+                            <li>projetos de instalações de baixa tensão;
+                            </li>
+                            <li>projetos de instalações de média tensão;
+                            </li>
+                            <li>protocolo de infraestrutura de comunicação.
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Modais de competencias  -->
+            <div class="container">
+                <div class="row align-items-left justify-content-left">
+                    <div class="col-md-4">
+                        <div class="section-heading">
+                            <h5 class="font-weight-bold text-left pt-3  px-2">Específicos</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row col-md-12 ">
+                    <div class="section-heading text-left  px-4">
+                        <p>Ao finalizar seus estudos, esperamos que você desenvolva as capacidades indicadas a seguir. 
+                        </p>
+                        <p><em>Clique nos quadros para saber mais.</em></p>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- Modais de competencias  -->
+
+            <div class="container mb-40">
+                <div class="row justify-content-center">
+                    <div class="d-grid  gap-2 col-md-3 mx-auto ">
+                        <button class="btn btn-light p-5" data-bs-toggle="modal" data-bs-target="#modal-competecia-1"
+                            aria-expanded="false" aria-controls="collapseTranscricao"><span>Técnicas
+                            </span></button>
+                    </div>
+                    <div class="d-grid gap-2 col-md-3 mx-auto ">
+                        <button class="btn btn-light p-5" data-bs-toggle="modal" data-bs-target="#modal-competecia-2"
+                            aria-expanded="false" aria-controls="collapseTranscricao"><span>Socioemocionais
+                            </span></button>
+                    </div>
+                   
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <main id="main" class="bg-light py-4">
+
+        <section class="bg-light2 mt-60 mb-60" data-section-id="2">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="section-heading text-center pb-30">
+                        <h1 class="display-4 font-weight-bold">Apresentação</h1>
+
+                    </div>
+                    <div class="container-lg text-center mb-30">
+                        <p><em>Para iniciar seus estudos, clique em play no podcast ou na transcrição.</em>
+                        </p>
+                    </div>
+                    <div class="gy-4 mt-1">
+                        <div class="gy-4">
+                            <div class="icon text-center mb-30">
+                                <i class="bi bi bi-mic-fill icone-black"></i>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <audio preload="auto" controls controlsList="nodownload">
+                                    <source src="libs/audio/apresentacao.mp3">
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="col-md-10 offset-md-1">
+                            <div class="row gx-0">
+                                <p>
+                                <div class="text-center">
+                                    <button class="btn btn-primary" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTranscricao" aria-expanded="false"
+                                        aria-controls="collapseTranscricao"><span>Transcrição</span></button>
+                                </div>
+                                </p>
+                                <div class="collapse mt-20" id="collapseTranscricao">
+                                    <div class="card card-body shadow">
+                                       <p>Olá! Neste podcast vamos conhecer o Planejamento de sistemas de recarga para eletromobilidade. Vamos lá?!  </p>
+
+                                       <p>A eletromobilidade está ganhando força como uma alternativa sustentável aos veículos convencionais movidos a combustíveis fósseis, então, para garantir o sucesso da implementação de veículos elétricos, é essencial desenvolver um planejamento eficiente dos sistemas de recarga. </p>
+
+                                       <p>Primeiramente, é fundamental definir como os pontos de recarga irão funcionar, levando em consideração as necessidades do cliente. Isso inclui a escolha do modelo, se de recarga rápida ou lenta, bem como o tipo de tarifação mais adequado, seja por tempo de uso, quilowatt/hora, ou outro método personalizado. </p>
+
+                                       <p>Também devemos determinar a quantidade e os tipos ideais de recarregadores para atender à demanda.  </p>
+
+                                       <p>Isso envolve considerar a localização estratégica dos pontos de recarga, analisando áreas urbanas, rodovias e locais de maior fluxo de veículos elétricos. </p>
+
+                                       <p>Em seguida, a infraestrutura elétrica existente também precisa ser avaliada, para garantir que possa suportar a demanda de energia dos recarregadores. Isso inclui o cálculo da carga máxima e a compatibilidade do padrão de entrada com os recarregadores. </p>
+
+                                       <p>Outra ação para garantir segurança, confiabilidade e continuidade de serviço é planejar cuidadosamente a divisão dos circuitos. Isso evita sobrecargas e interrupções inesperadas. </p>
+
+                                       <p>Os dispositivos de proteção, como disjuntores e fusíveis, também devem ser dimensionados corretamente. Além disso, a capacidade dos condutores deve ser compatível com a carga elétrica dos recarregadores. </p>
+
+                                       <p>Todo esse planejamento deve estar em conformidade com os regulamentos das autoridades competentes para instalações elétricas de baixa e média tensão, garantindo a segurança e a legalidade da infraestrutura. </p>
+
+                                       <p>Conhecer os diferentes dispositivos das instalações elétricas dos sistemas de recarga é vital para manutenções e reparações eficientes. </p>
+
+                                       <p>Só tome cuidado: diferentes concessionárias podem ter requisitos específicos para as cabines elétricas. Identificar esses critérios é fundamental para a aprovação do projeto. </p>
+
+                                       <p>A obtenção da documentação adequada também é parte essencial para a requisição de acesso ou alteração de projeto junto às autoridades competentes, como licenças e aprovações. </p>
+
+                                       <p>A infraestrutura de comunicação para monitorar e controlar os recarregadores deve ser implementada de forma eficiente para garantir a operação adequada e a coleta de dados relevantes. </p>
+
+                                       <p>Antes de disponibilizar os pontos de recarga ao público, é necessário realizar o comissionamento, que envolve testes e verificações para garantir que todos os sistemas estejam funcionando corretamente e em conformidade com as especificações. </p>
+
+                                       <p>Portanto, o planejamento de sistemas de recarga para eletromobilidade requer uma abordagem holística que leve em consideração todas essas capacidades técnicas. Ao fazê-lo, podemos garantir uma transição suave para a eletromobilidade e fornecer serviços de recarga confiáveis e eficientes para os usuários de veículos elétricos. </p>
+
+                                       <p>Chegamos ao final deste podcast, espero que o conteúdo abordado ajude na sua jornada de estudos. Bons estudos e até a próxima! </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Box1 / Video -->
+        <section class="bg-light" data-section-id="3">
+            <div class="container-lg">
+                <div class="box-video">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <h3 class="display-4 font-weight-bold text-center">Modelos de negócios
+
+                            </h3>
+                            <p>Nesta aula, você irá conhecer como definir o modelo de funcionamento dos pontos de recarga e o tipo de tarifação mais adequado, de acordo com a necessidade do cliente. 
+                            </p>
+
+                            <p><em>Clique em play no vídeo a seguir.
+                                </em></p>
+
+                            <div id="player1" style="margin-top: 30px;"></div>
+
+                            <div class="row col-12 align-items-center">
+                                <div class="d-contents">
+                                    <li class="icon iconpdf"><a
+                                        href="javascript:popup('libs/docs/aula1_MNegocios.pdf',{w:625,h:460})"><i
+                                                class='bx bxs-file-pdf'></i></a></li>
+                                </div>
+                                <div class="col-10 ps-0 mobile-screen">
+                                    <span><strong><a
+                                        href="javascript:popup('libs/docs/aula1_MNegocios.pdf',{w:625,h:460})">Modelos de Negócios
+
+                                                <i
+                                                    class='bx bxs-arrow-to-bottom'></i></a></strong></span><br><span><em>Clique no ícone para baixar o conteúdo referente a esta aula.
+                                                    </em></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                    
+
+                </div>
+        </section>
+        <!-- Primeiro Video  -->
+
+        <section class="bg-light" data-section-id="4">
+            <div class="container-lg">
+                
+                
+
+                    <!-- Primeiro Video  -->
+                    <div class="box-video">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <h3 class="display-4 font-weight-bold text-center">Tarifa de recarga
+
+                                </h3>
+                                <p>Nesta aula, você irá conhecer como definir o modelo de funcionamento dos pontos de recarga e o tipo de tarifação mais adequado, de acordo com a necessidade do cliente. 
+                                </p>
+                                <p><em>Clique em play no vídeo a seguir.
+                                    </em></p>
+
+                                <div id="player2" style="margin-top: 30px;"></div>
+
+                                <div class="row col-12 align-items-center">
+                                    <div class="d-contents">
+                                        <li class="icon iconpdf"><a
+                                            href="javascript:popup('libs/docs/aula2_TRecarga.pdf',{w:625,h:460})"><i
+                                                    class='bx bxs-file-pdf'></i></a></li>
+                                    </div>
+                                    <div class="col-10 ps-0 mobile-screen">
+                                        <span><strong><a
+                                            href="javascript:popup('libs/docs/aula2_TRecarga.pdf',{w:625,h:460})">Tarifação de recarga 
+
+                                                    <i
+                                                        class='bx bxs-arrow-to-bottom'></i></a></strong></span><br><span><em>Clique
+                                                no ícone para baixar o conteúdo referente a esta aula.</em></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+               
+            </div>
+        </section>
+
+
+
+        <!-- Box 2 / Video  -->
+        <section class="bg-light" data-section-id="5">
+            <div class="container-lg">
+                
+                
+
+                    <!-- Primeiro Video  -->
+                    <div class="box-video">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <h3 class="display-4 font-weight-bold text-center">Recarregadores
+                                </h3>
+                                <p>Nesta aula, você conhecerá tipos, quantidades e localizações dos recarregadores, bem como entender a forma de avaliar a instalação em termos de demanda, consumo de energia e compatibilidade do padrão de entrada. 
+                                </p>
+                                <p><em>Clique em play no vídeo a seguir.
+                                    </em></p>
+
+                                <div id="player3" style="margin-top: 30px;"></div>
+
+                                <div class="row col-12 align-items-center">
+                                    <div class="d-contents">
+                                        <li class="icon iconpdf"><a
+                                            href="javascript:popup('libs/docs/aula3_Recarregadores.pdf',{w:625,h:460})"><i
+                                                    class='bx bxs-file-pdf'></i></a></li>
+                                    </div>
+                                    <div class="col-10 ps-0 mobile-screen">
+                                        <span><strong><a
+                                            href="javascript:popup('libs/docs/aula3_Recarregadores.pdf',{w:625,h:460})">Recarregadores
+                                                    <i
+                                                        class='bx bxs-arrow-to-bottom'></i></a></strong></span><br><span><em>Clique
+                                                no ícone para baixar o conteúdo referente a esta aula.</em></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+               
+            </div>
+        </section>
+
+
+
+
+        <!--  Box 6 / PODCAST  -->
+        <section class="bg-light">
+            <div class="container-lg">
+                
+
+                    <!-- Primeiro Video  -->
+                    <div class="box-video">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <h3 class="display-4 font-weight-bold text-center">Eletromobilidade no Brasil
+
+                                </h3>
+
+
+                            </div>
+                        </div>
+
+                        <!--Podcast-->
+
+
+<p>
+    <br>
+</p>
+<div class="container-lg">
+    <div class="">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+
+                <p class="text-center"><em>Clique em play ou na transcrição para acompanhar o podcast a seguir.
+                    </em></p>
+
+            </div>
+        </div>
+
+        <!-- Segundo Video  -->
+        <!---PODCAST--->
+        <div class="row">
+            <!-- <div class="text-center pb-30 mt-50">
+                <h2 class="font-weight-bold">Nome do assunto do podcast</h2>
+            </div>
+            <div class="container-lg text-center mb-30">
+                <p><em>Clique em play para conferir.</em>
+                </p>
+            </div> -->
+            <div class="gy-4 mt-1">
+                <div class="gy-4">
+                    <div class="icon text-center mb-30">
+                        <i class="bi bi bi-mic-fill icone-black"></i>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <audio preload="auto" controls controlsList="nodownload">
+                            <source src="libs/audio/entrevista.mp3">
+                        </audio>
+                    </div>
+                </div>
+                <div class="col-md-10 offset-md-1">
+                    <div class="row gx-0">
+                        <p>
+                        <div class="text-center">
+                            <button class="btn btn-primary" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTranscricao1" aria-expanded="false"
+                                aria-controls="collapseTranscricao"><span>Transcrição</span></button>
+                        </div>
+                        </p>
+                        <div class="collapse mt-20" id="collapseTranscricao1">
+                            <div class="card card-body shadow">
+ <p><strong>Entrevistador</strong>: Olá! Neste podcast vamos conversar com o especialista em eletromobilidade sobre um panorama geral da eletromobilidade no Brasil. Vamos lá?!  </p>
+
+ <p><strong>Entrevistador</strong>: Hoje o nosso convidado o especialista Ricardo rosante vai trazer uma visão geral sobre a eletromobilidade no Brasil. Seja muito bem-vindo e obrigada por aceitar nosso convite! Poderia se apresentar? </p>
+
+ <p><strong>Especialista</strong>: Agradeço ao convite e fico muito feliz em poder contribuir. Sou o professor Ricardo Rosante, sou formado em técnico eletrônica, tenho graduação em Direito, sou pós-graduado em administração de empresas e atualmente estou cursando o mestrado em planejamento energético pela Universidade Federal do ABC.
+ </p>
+
+ <p><strong>Entrevistador</strong>: A eletromobilidade é um tópico relevante para discutir, uma vez que envolve questões ambientais, tecnológicas e econômicas. Para começar o nosso papo poderia explicar o que é eletromobilidade e por que é importante discuti-la no contexto do Brasil? </p>
+
+ <p><strong>Especialista</strong>: A eletromobilidade se refere ao uso de veículos elétricos, como carros, ônibus e bicicletas, que utilizam eletricidade como fonte de energia em vez de combustíveis fósseis. Isso é importante para o Brasil, pois pode ajudar a reduzir a poluição do ar, as emissões de gases de efeito estufa e a dependência de petróleo, ao mesmo tempo em que impulsiona a inovação tecnológica e a indústria nacional. </p>
+
+ <p><strong>Entrevistador</strong>: Quais são os principais desafios que o Brasil enfrenta na promoção da eletromobilidade? </p>
+
+ <p><strong>Especialista</strong>: Os principais desafios incluem a falta de infraestrutura de recarga, o custo inicial dos veículos elétricos, a necessidade de políticas públicas de incentivo e a dependência histórica do etanol como combustível alternativo. </p>
+
+ <p><strong>Entrevistador</strong>: Quais são as iniciativas do governo brasileiro para promover a eletromobilidade? </p>
+
+ <p><strong>Especialista</strong>: O governo tem implementado programas como o Rota 2030 e o Procel Veículos, que visam incentivar a produção e adoção de veículos elétricos no país. Além disso, existem benefícios fiscais e tarifários para veículos elétricos e híbridos.  </p>
+
+ <p><strong>Entrevistador</strong>: Qual é a situação da infraestrutura de recarga para veículos elétricos no Brasil? </p>
+
+ <p><strong>Especialista</strong>: A infraestrutura de recarga no Brasil ainda é limitada, especialmente fora das grandes cidades. No entanto, várias empresas e governos locais têm investido na expansão das redes de recarga, tornando-as mais acessíveis aos proprietários de veículos elétricos. </p>
+
+ <p><strong>Entrevistador</strong>: Como a eletromobilidade pode contribuir para a redução das emissões de carbono no Brasil? </p>
+
+ <p><strong>Especialista</strong>: A eletromobilidade pode contribuir significativamente para a redução das emissões de carbono, uma vez que os veículos elétricos produzem zero emissões no escapamento. Isso é fundamental para ajudar o Brasil a cumprir suas metas de redução de emissões de gases de efeito estufa, especialmente no setor de transportes. </p>
+
+ <p><strong>Entrevistador</strong>: Quais são os principais benefícios econômicos da eletromobilidade para o Brasil? </p>
+
+ <p><strong>Especialista</strong>: A eletromobilidade pode criar empregos na produção, manutenção e desenvolvimento de tecnologia de veículos elétricos. Além disso, a redução da dependência de combustíveis fósseis pode fortalecer a segurança energética do país. </p>
+
+ <p><strong>Entrevistador</strong>: Quais são os desafios para a indústria automobilística brasileira na transição para a eletromobilidade? </p>
+
+ <p><strong>Especialista</strong>: A indústria automobilística brasileira enfrenta desafios, como a necessidade de adaptação da cadeia de suprimentos, investimentos em tecnologia e a competição com mercados internacionais mais avançados na produção de veículos elétricos. </p>
+
+ <p><strong>Entrevistador</strong>: Bom, temos um bom caminho ainda para percorrer. Chegamos ao final de mais um episódio fascinante em nossa jornada pela eletromobilidade. Aproveito para agradecer ao Ricardo pela disponibilidade e com a contribuição sobre o tema. </p>
+
+ <p><strong>Especialista</strong>: Agradeço a oportunidade. Aproveito para destacar que a educação e a conscientização são fundamentais para informar o público sobre os benefícios da eletromobilidade e para incentivar a adoção de veículos elétricos. Obrigada e até aproxima! </p>
+
+ <p><strong>Entrevistador</strong>: Hoje, conhecemos um pouco sobre o panorama da eletromobilidade no Brasil e seus desafios. Esperamos que tenha desfrutado deste episódio e que tenha aprendido tanto quanto nós. Até a próxima e bons estudos! </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Fim Podcast-->
+
+                    </div>
+
+                    
+                
+            </div>
+        </section>
+
+
+        <!-- Box 2 / Video  -->
+        <section class="bg-light" data-section-id="6">
+            <div class="container-lg">
+                
+                
+
+                    <!-- Primeiro Video  -->
+                    <div class="box-video">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <h3 class="display-4 font-weight-bold text-center">Projetos de instalações de baixa tensão​
+
+                                </h3>
+                                <p>Nesta aula, você conhecerá os sistemas de baixa tensão para estações de recarga de veículos elétricos. 
+                                </p>
+                                <p><em>Clique em play no vídeo a seguir.
+                                    </em></p>
+
+                                <div id="player4" style="margin-top: 30px;"></div>
+
+                                <div class="row col-12 align-items-center">
+                                    <div class="d-contents">
+                                        <li class="icon iconpdf"><a
+                                            href="javascript:popup('libs/docs/aula4_PIBTensao.pdf',{w:625,h:460})"><i
+                                                    class='bx bxs-file-pdf'></i></a></li>
+                                    </div>
+                                    <div class="col-10 ps-0 mobile-screen">
+                                        <span><strong><a
+                                            href="javascript:popup('libs/docs/aula4_PIBTensao.pdf',{w:625,h:460})">Projetos de instalações de baixa tensão
+                                                    <i
+                                                        class='bx bxs-arrow-to-bottom'></i></a></strong></span><br><span><em>Clique
+                                                no ícone para baixar o conteúdo referente a esta aula.</em></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+               
+            </div>
+        </section>
+
+
+
+
+        <!-- Box 2 / Video  -->
+        <section class="bg-light" data-section-id="7">
+            <div class="container-lg">
+                
+                
+
+                    <!-- Primeiro Video  -->
+                    <div class="box-video">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <h3 class="display-4 font-weight-bold text-center">Projetos de instalações de média tensão​
+                                    ​
+
+                                </h3>
+                                <p>Nesta aula, você aprenderá sobre aplicar requisitos regulatórios para instalações elétricas de baixa e média tensão, diagramas elétricos, plantas baixas e instalações elétricas do sistema de recarga, bem como os diferentes tipos de cabines.
+                                </p>
+                                <p><em>Clique em play no vídeo a seguir.
+                                    </em></p>
+
+                                <div id="player5" style="margin-top: 30px;"></div>
+
+                                <div class="row col-12 align-items-center">
+                                    <div class="d-contents">
+                                        <li class="icon iconpdf"><a
+                                            href="javascript:popup('libs/docs/aula5_PIMTensao.pdf',{w:625,h:460})"><i
+                                                    class='bx bxs-file-pdf'></i></a></li>
+                                    </div>
+                                    <div class="col-10 ps-0 mobile-screen">
+                                        <span><strong><a
+                                            href="javascript:popup('libs/docs/aula5_PIMTensao.pdf',{w:625,h:460})">Projetos de instalações de média tensão​
+
+                                                    <i
+                                                        class='bx bxs-arrow-to-bottom'></i></a></strong></span><br><span><em>Clique
+                                                no ícone para baixar o conteúdo referente a esta aula.</em></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+               
+            </div>
+        </section>
+
+
+
+        <!-- Box 2 / Video  -->
+        <section class="bg-light" data-section-id="8">
+            <div class="container-lg">
+                
+                
+
+                    <!-- Primeiro Video  -->
+                    <div class="box-video">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <h3 class="display-4 font-weight-bold text-center">Protocolo de infraestrutura de comunicação​
+
+                                    ​
+
+                                </h3>
+                                <p>Nesta aula, você conhecerá os protocolos e a capacidade de integrar sistemas de carregamento de veículos elétricos, selecionando protocolos adequados para situações e contextos específicos de acordo com as normas relevantes, considerando os aspectos de segurança. 
+                                </p>
+                                <p><em>Clique em play no vídeo a seguir.
+                                    </em></p>
+
+                                <div id="player6" style="margin-top: 30px;"></div>
+
+                                <div class="row col-12 align-items-center">
+                                    <div class="d-contents">
+                                        <li class="icon iconpdf"><a
+                                            href="javascript:popup('libs/docs/aula6_PIComunicacao.pdf',{w:625,h:460})"><i
+                                                    class='bx bxs-file-pdf'></i></a></li>
+                                    </div>
+                                    <div class="col-10 ps-0 mobile-screen">
+                                        <span><strong><a
+                                            href="javascript:popup('libs/docs/aula6_PIComunicacao.pdf',{w:625,h:460})">Protocolo de infraestrutura de comunicação​
+
+                                                    <i
+                                                        class='bx bxs-arrow-to-bottom'></i></a></strong></span><br><span><em>Clique
+                                                no ícone para baixar o conteúdo referente a esta aula.</em></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+               
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- Box 7 / Podcast  -->
+       
+
+
+        <section data-section-id="9" class="bg-white">
+
+            <div class="container">
+
+                <div class="section-heading text-center pb-30">
+                    <h1 class="display-4 font-weight-bold">Recapitulando</h1>
+
+                </div>
+                <div class="row">
+                   
+                        <div class="section-heading text-center pb-30">
+                            <!-- <h3 class="text-uppercase">RECAPITULANDO</h3> -->
+                            <p><em>Para revisar o que foi estudado, clique em play ou na transcrição a seguir para acompanhar o podcast.
+
+                                </em>
+                            </p>
+                        </div>
+                        <div class="gy-4 mt-1">
+                            <div class="gy-4">
+                                <div class="icon text-center mb-30">
+                                    <i class="bi bi bi-mic-fill icone-black"></i>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <audio preload="auto" controls controlsList="nodownload">
+                                        <source src="libs/audio/recapitulando.mp3">
+                                    </audio>
+                                </div>
+                            </div>
+                            <div class="col-md-10 offset-md-1">
+                                <div class="row gx-0">
+                                    <p>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTranscricao4" aria-expanded="false"
+                                            aria-controls="collapseTranscricao"><span>Transcrição</span></button>
+                                    </div>
+                                    </p>
+                                    <div class="collapse mt-20" id="collapseTranscricao4">
+                                        <div class="card card-body shadow">
+                                            <p>Olá! Neste podcast vamos retomar alguns pontos importantes de como realizar o Planejamento de sistemas de recarga para eletromobilidade. Vamos lá?!  </p>
+
+                                            <p>Com a crescente importância da eletromobilidade como uma alternativa sustentável dentro da área de transportes, o planejamento eficiente dos sistemas de recarga desempenha um papel crucial nesse cenário.  </p>
+
+                                            <p>Conectar essa transição aos princípios da indústria é essencial para garantir o sucesso. </p>
+
+                                            <p>Para começar, é preciso escolher adequadamente o ponto estratégico para implementar eletropostos de recarga para veículos elétricos, sendo essencial entender as necessidades e demandas locais. Nesse sentido, oferecer o serviço de recarga rápida ou lenta e determinar o método de tarifação adequado são cruciais.  </p>
+
+                                            <p>Agora você deve estar se perguntando, mas como conectamos isso à indústria? Bom, essa escolha estratégica impacta diretamente na experiência do usuário e, consequentemente, na aceitação do mercado. Vamos entender melhor como isso acontece? </p>
+
+                                            <p>A localização estratégica, seja em áreas urbanas, rodovias ou locais de maior fluxo, é essencial para atender à demanda. Nesse cenário, a indústria desempenha um papel vital, garantindo que a infraestrutura esteja alinhada com as expectativas do mercado. </p>
+
+                                            <p>Portanto, é fundamental avaliar a capacidade da infraestrutura elétrica existente para construir algo duradouro. Na indústria, isso se traduz na necessidade de alinhar a infraestrutura existente com os requisitos dos recarregadores. </p>
+
+                                            <p>Ao planejar a divisão de circuitos e dimensionar disjuntores e fusíveis corretamente, a indústria garante a segurança, a confiabilidade e a continuidade do serviço. Isso é fundamental para evitar interrupções inesperadas e garantir a integridade dos sistemas. </p>
+
+                                            <p>É preciso ter em mente que a eletromobilidade surge como uma resposta inovadora e sustentável aos tradicionais veículos movidos a combustíveis fósseis.  </p>
+
+                                            <p>No entanto, para assegurar uma transição eficaz e bem-sucedida para essa forma de transporte, é imperativo realizar um planejamento abrangente que aborde diversos aspectos, desde modelos de negócio até normas de comunicação. </p>
+
+                                            <p>O primeiro passo crucial é compreender os diferentes modelos de negócio associados à eletromobilidade. O compartilhamento de veículos elétricos destaca-se como uma alternativa eficiente, incentivando a mobilidade sem a necessidade de posse, enquanto o transporte individual permite que indivíduos adotem veículos elétricos para uso pessoal. Além disso, a integração de veículos elétricos no transporte público e na logística promove uma mudança significativa para uma mobilidade mais sustentável. </p>
+
+                                            <p>No âmbito da tarifação de recarga, é necessário considerar a diversidade de tipos de tarifas, que podem incluir modelos baseados no tempo de uso, consumo em quilowatt/hora ou métodos personalizados.  </p>
+
+                                            <p>Determinar o custo de recarga envolve uma análise aprofundada dos custos operacionais e manutenção da infraestrutura, buscando um equilíbrio entre acessibilidade para os usuários e a sustentabilidade financeira do sistema. Instrumentos avançados de medição e monitoramento desempenham um papel crucial na precisão do processo de cobrança. </p>
+
+                                            <p>Os recarregadores, no entanto, requerem uma cuidadosa consideração na fase de planejamento. Existem três tipos principais: lento, semirrápido e rápido, cada um atendendo diferentes necessidades de recarga. A escolha correta de modelos de tomadas, como CCS1, CCS2, ChaDeMo, GT/B e Tesla, é essencial para garantir a compatibilidade com diferentes veículos elétricos. </p>
+
+                                            <p>No que diz respeito aos projetos de instalações de baixa e média tensão, aspectos como proteção contra surto, aterramento, condutores elétricos e padrão de entrada são críticos para a segurança e eficiência do sistema.  </p>
+
+                                            <p>O entendimento aprofundado dos diferentes tipos de cabines primárias, proteção e seletividade, bem como dos principais componentes, incluindo disjuntores, transformadores, seccionadoras e fusíveis, é essencial nas instalações de média tensão. </p>
+
+                                            <p>A infraestrutura de comunicação, por sua vez, desempenha um papel crucial na operação eficiente do sistema de recarga. Protocolos como o DIN 70121 e o IEC 63110 facilitam a comunicação entre veículos elétricos e recarregadores, enquanto normas de segurança, como ISO 14443-2, ISO 7816-4 e ISO 15118, garantem operações seguras. </p>
+
+                                            <p>A implementação de tecnologias inteligentes, como o smart grid energy city, e a adoção de protocolos de roaming entre redes, como o IEC 63119, permitem uma gestão mais eficiente da rede elétrica e a interoperabilidade entre diferentes sistemas de recarga. </p>
+
+                                            <p>Como podemos entender, o planejamento abrangente dos sistemas de recarga para eletromobilidade requer uma abordagem holística, considerando que tudo está interligado, desde a escolha do modelo de negócio até o estudo dos recarregadores, infraestrutura elétrica, comunicação e normas de segurança, formando uma rede complexa que impulsiona a transição suave para um futuro mais sustentável e eletrificado.  </p>
+
+                                            <p>O conhecimento aprofundado desses elementos é fundamental para o sucesso dessa jornada inovadora rumo à eletromobilidade.  </p>
+
+                                            <p>Chegamos ao final deste podcast, espero que o conteúdo abordado ajude na sua jornada profissional. </p>
+
+                                            <p>Bons estudos e até a próxima! </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    
+                </div>
+            </div>
+         
+
+            <!-- Modal -->
+            <section data-section-id="8">
+                <div class="container mb-40 ">
+                    <div class="row justify-content-center">
+                        <div class="d-grid gap-2 col-md-3 mx-auto p-3">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#referencia"
+                                aria-expanded="false"
+                                aria-controls="collapseTranscricao"><span>Referências</span></button>
+                        </div>
+                        <div class="d-grid gap-2 col-md-3 mx-auto p-3">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#creditos"
+                                aria-expanded="false" aria-controls="collapseTranscricao"><span>Créditos</span></button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+            <!-- Modal -->
+            
+<button class="btn btn-sm btn-primary rounded-circle position-fixed bottom-0 end-0 translate-middle d-none" onclick="scrollToTop()" id="back-to-up">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+  </button>
+        </section>
+       
+
+
+
+        <!-- Modal modal-competecia-1 -->
+        <div class="modal fade" id="modal-competecia-1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Capacidades técnicas
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li> Definir o modelo de funcionamento dos pontos de recarga e o tipo de tarifação mais adequado, de acordo com a necessidade do cliente.
+                            </li>
+
+                            <li>Definir os tipos, quantidades e localizações dos recarregadores, de acordo com a demanda.
+                            </li>
+                            <li>Avaliar a instalação em termos de demanda, consumo de energia e compatibilidade do padrão de entrada.
+                            </li>
+                            <li>Verificar a divisão de circuitos visando segurança, confiabilidade e continuidade de serviço.
+                            </li>
+                            <li>Analisar dispositivos de proteção, capacidade de condutores e infraestrutura elétrica.
+                            </li>
+                            <li>Aplicar requisitos regulatórios para instalações elétricas de baixa e média tensão.
+                            </li>
+                            <li>Compreender diagramas elétricos e plantas baixas. 
+                            </li>
+                            <li>Reconhecer os dispositivos das instalações elétricas do sistema de recarga. 
+                            </li>
+                            <li>Identificar os diferentes tipos de cabines, conforme critérios da concessionária. 
+                            </li>
+                            <li>Solicitar documentação necessária para requisição de acesso ou alteração de projeto. 
+                            </li>
+                            <li>Executar a conectividade dos eletropostos por meio da infraestrutura de comunicação. 
+                            </li>
+                            <li>Realizar o comissionamento da infraestrutura de recarga. 
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal modal-competecia-1 -->
+
+        <!-- Modal modal-competecia-2 -->
+        <div class="modal fade" id="modal-competecia-2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Capacidades socioemocionais
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Criatividade, originalidade e iniciativa 
+                        </strong></p>
+                        <ul>
+                            <li>
+                                Orientar o comportamento para a consecução de objetivos individuais e coletivos, de modo organizado e esforçado, fazendo escolhas em relação à vida profissional e estimulando a liberdade e a autonomia.
+                            </li>
+                          
+                        </ul>
+
+                        <p><strong>Inteligência emocional: autoconhecimento e autorregulação  
+                        </strong></p>
+                        <ul>
+                            <li>Apresentar controle, previsibilidade e consistência nas reações emocionais –  demonstrando consciência das suas emoções, forças e limitações, os motivos dessas reações e os possíveis impactos nas atividades profissionais e relações de trabalho.
+                            </li>
+                        </ul>
+
+                        <p><strong>Liderança e influência social e empreendedorismo 
+                        </strong></p>
+
+                        <ul>
+                            <li>Trabalhar em equipes, demonstrando flexibilidade e adaptabilidade, respeitando pares, superiores e subordinados, compartilhando conhecimentos, ideias, experiências e opiniões, mantendo bom relacionamento com a equipe.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal modal-competecia-2 -->
+
+        <!-- Modal modal-competecia-3 -->
+        <div class="modal fade" id="modal-competecia-3" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Normas
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>Aplicar os requisitos das normas técnicas em trabalhos acadêmicos.
+                            </li>
+
+                            <li>Aplicar normas de formatação em trabalhos acadêmicos.
+                                ​</li>
+
+                            <li>Estruturar pôster (banner) técnico científico para apresentação em conformidade com as normas.
+                            </li>
+
+                            <li>Utilizar a plataforma Lattes, a fim de obter visibilidade e credibilidade nos trabalhos e publicações.
+                            </li>
+
+                            <li>Cumprir a Lei de Direitos Autorais.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal modal-competecia-3 -->
+
+        <!-- Modal modal-competecia-4 -->
+        <div class="modal fade" id="modal-competecia-4" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Socioemocionais
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Aprendizagem ativa e estratégias de aprendizagem 
+                        </p>
+                        <ul>
+                            <li>Demonstrar postura proativa e atitude inovadora, adaptando-se, com criatividade e flexibilidade, a novos contextos tecnológicos e organizacionais. </li>
+                        </ul>
+
+                        <p>Pensamento crítico e inovação 
+                        </p>
+                        <ul>
+                            <li>Expressar-se de modo crítico e com base em evidências claras, ponderando diferentes fatos, ideias, opiniões, visões e perspectivas aplicáveis às atividades sob a sua responsabilidade.</li>
+                        </ul>
+
+
+                        <p>Resolução de problemas complexos  
+                        </p>
+                        <ul>
+                            <li>Reconhecer demandas e apresentar possibilidades para resolução de problemas em contextos de sua atuação profissional, demonstrando postura proativa.
+                             </li>
+                        </ul>
+
+
+                       
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal modal-competecia-4-->
+
+        <!-- Modal modal-competecia-5 -->
+        <div class="modal fade" id="modal-competecia-5" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">modal-competecia-5</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal modal-competecia-5 -->
+
+        <!-- Modal modal-competecia-6 -->
+        <div class="modal fade" id="modal-competecia-6" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">modal-competecia-6"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal modal-competecia-6 -->
+
+
+
+
+
+          
+        <!-- Modal Referência -->
+        <div class="modal fade" id="referencia" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Referências</h5>
+
+                        
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="word-wrap: break-word;">
+                        <p>COTRIM, A. A. M. B. <strong>Instalações Elétricas</strong>. 3. ed. São Paulo: Makron books, 1992. 
+                        </p>
+
+                        <p>MINISTÉRIO DE MINAS E ENERGIA. Agência Nacional de Energia Elétrica. <strong>Procedimentos de Distribuição de Energia no Sistema Elétrico Nacional – Prodist</strong>. 2018. Disponível em: https://www.aneel.gov.br/documents/656827/14866914/M%C3%B3dulo_8-Revis%C3%A3o_12/342ff02a-8eab-2480-a135-e31ed2d7db47. Acesso em: 15 nov. 2015. 
+                        </p>
+
+                        <p>MONTOYA, J. G. V. <strong>Qualidade de energia elétrica e micro-rede</strong>: Avaliação da qualidade de energia em uma micro-rede usando simulação em tempo real. Edições Nosso Conhecimento, 2021.
+                        </p>
+
+                        <p>NETA, R. M. de L. <strong>Qualidade de Energia em Redes de Distribuição com Veículos Elétricos</strong>: Impactos do Carregamento. Novas Edições Acadêmicas, 2016.
+                        </p>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CRÉDITOS -->
+        <div class="modal fade" id="creditos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title " id="exampleModalLabel">Créditos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            style="margin: 0"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+                                <p><strong>CONFEDERAÇÃO NACIONAL DA INDÚSTRIA – CNI</strong></p>
+                                <p><em>Robson Braga de Andrade</em><br><strong>Presidente</strong>
+                                </p>
+                                <br>
+                                <p><strong>DIRETORIA DE EDUCAÇÃO E TECNOLOGIA — DIRET</strong></p>
+                                <p><em>Rafael Esmeraldo Lucchesi Ramacciotti</em><br><strong>Diretor de Educação e
+                                        Tecnologia</strong></p>
+                                <br>
+                                <p><strong>SERVIÇO NACIONAL DE APRENDIZAGEM INDUSTRIAL — SENAI — CONSELHO
+                                        NACIONAL</strong></p>
+                                <p><em>Robson Braga de Andrade</em><br><strong>Presidente</strong></p>
+                                <br>
+                                <p><strong>SENAI — DEPARTAMENTO NACIONAL</strong></p>
+                                <p><em>Rafael Esmeraldo Lucchesi Ramacciotti</em><br><strong>Diretor-Geral</strong>
+                                </p>
+
+                                <p><em>Gustavo Leal Sales Filho</em><br><strong>Diretor de Operações</strong></p>
+
+                                <p><strong>SENAI – DEPARTAMENTO NACIONAL​ <br>SUPERINTENDÊNCIA DE EDUCAÇÃO PROFISSIONAL E SUPERIOR – SUEPS​​</strong></p>
+                                <p><em>Felipe Esteves Morgado</em><br><strong>Superintendente de Educação Profissional e Superior</strong></p>
+                                <p><em>Luiz Eduardo Leão</em>
+                                    <br><strong>Gerente de Tecnologias Educacionais</strong>
+                                </p>
+
+                                <p><em>Anna Christina Aun de Azevedo Nascimento
+                                        <br>Cyro Visgueiro Maciel
+                                        <br>Laíse Caldeira Pedroso
+                                        <br>Decio Campos da Silva
+                                    </em><br><strong>Coordenação Geral de Desenvolvimento dos Recursos Didáticos
+                                        Nacionais</strong></p>
+
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="row mt-50">
+                            <p><strong>SENAI — DEPARTAMENTO REGIONAL DE SÃO PAULO</strong></p>
+
+                            <div class="col-md-12">
+
+
+
+                            </div>
+                            <div class="col-md-12">
+
+                                <p><em>Ricardo Figueiredo Terra</em><br><strong>Diretor Regional</strong></p>
+
+                                <p><em>Cassia Regina Souza da Cruz</em><br><strong>Gerente de Educação</strong></p>
+
+                                <p><em>Luiz Carlos de Almeida Filho</em><br><strong>Diretor da Escola SENAI de Educação
+                                        Online</strong>
+                                </p>
+
+                                <p><em>Adilson Moreira Damasceno
+                                        <br>Audrey Castellani Aldecoa
+                                        <br>Melissa Rocha Gabarrone
+                                    </em><br><strong>Coordenação</strong>
+                                </p>
+
+                                <p><em>Adriana de Souza Farias​<br>
+                                        Adriana Valéria Lucena​<br>
+                                        Danielli Guirado​<br>
+                                        Diego Rufino<br>
+                                        Fabiane Marques de Oliveira<br>
+                                        Gustavo Vilela Santos<br>​
+                                        Jeferson Paiva​<br>
+                                        Mait Paredes​<br>
+                                        Mariana Almeida<br>
+                                        Sueli Aparecida Diogo<br>
+                                    </em><strong>Escritório de Projetos e Processos</strong>
+                                </p>
+
+                                <p><em>Claudia Baroni Savini Ferreira<br>
+                                        Camila Zanella Lückmann<br>
+                                        João Francisco Correia de Souza<br>
+                                        Phillipe Rocca Datovo<br>
+                                        Annadeives Aparecida Conceição Pita<br>
+                                        Antonio Fernando Silveira Alves<br>
+                                        Camila do Espirito Santo Ornela Passos<br>
+                                        Carolina Salvino Correa<br>
+                                        Catarine Aurora Nogueira Pereira<br>
+                                        Clarice da Silva Elias<br>
+                                        Cristiane de Barros Rodrigues Favareto<br>
+                                        Cristina Yurie Takahashi<br>
+                                        Fernanda Pereira<br>
+                                        Flávia dos Santos Silveira<br>
+                                        Katya Martinez Almeida<br>
+                                        Marcelo Mauricio da Silva<br>
+                                        Poliana Maria Barbosa das Neves<br>
+                                        Pyetra Stephannie Rodrigues Costa<br>
+                                        Regina Kambara Hirata<br>
+                                        Simony Pimentel Santos do Nascimento<br>
+                                    </em><strong>Design de Aprendizagem</strong></p>
+
+                                    <p><em>Paula Cristina Bataglia Buratini<br>
+                                        Allan Marcondes de Oliveira<br>
+                                        Caio Marques Rodrigues<br>
+                                        Ezequiel Regino Monção<br>
+                                        Igor Freitas<br>
+                                        Isabella Ferreira<br>
+                                        Matheus Antônio de Guimarães Elegância<br>
+                                        Pedro Lehi Rodrigues Muniz<br>
+                                        Fabiano José de Moura<br>
+                                        Juliana Rumi Fujishima <br>
+                                        Luiz Sansone<br>
+                                        Noel Oliveira<br>
+                                    </em><strong>Design Digital</strong></p>
+
+
+                                <p><em>Camila Ciarini Dias<br>
+                                        Getulio Azevedo Alves<br>
+                                        Alexandre Sinachi<br>
+                                        Ederson Guilherme Antonio Silva<br>
+                                        Rafael Marques Pimenta<br>
+                                        Tiago Florencio da Silva<br>
+                                        Ligia Dos Santos Daghes<br>
+                                    </em><strong>Produção Audiovisual</strong></p>
+
+                                
+
+
+
+                                <p><em>Rafael Santiago Apolinário<br>
+                                        Aldo Toma Junior<br>
+                                        Armando Victor Pereira<br>
+                                        Douglas Lacerda da Conceição<br>
+                                        Rolfi Cintas Gomes Luz<br>
+                                        Wesley José Pinto Silveira<br>
+                                    </em><strong>Desenvolvimento Tecnológico</strong></p>
+
+
+                                <p><em>Ricardo Donisete Rosante
+                                </em><br>
+                                    <strong>Desenvolvimento de Conteúdo​</strong>
+                                </p>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Ajuda -->
+        <div class="modal fade" id="ajuda" tabindex="-1" aria-labelledby="ajuda" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title center" id="ajuda">Ajuda</h5>
+                        <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="row col-md-12 strokeBlock-blue mb-10">
+
+                                    <div class="">
+                                        <p style="text-align: center">Logo acima do nome da unidade curricular há o
+                                            indicador de <strong>progresso</strong> da aula.<br><img
+                                                src="libs/img/_template/btn-progresso.png" class="valign"></p>
+                                    </div>
+                                </div>
+
+                                <div class="row col-md-12 strokeBlock-blue mb-10">
+                                    <div class="col-md-6">
+                                        <div class="row align-items-center">
+                                            <div class="col-3">
+                                                <img src="libs/img/_template/btn-conf.png" class="img-fluid"
+                                                    style="max-width: 56px;">
+                                            </div>
+                                            <div class="col">
+                                                Acesso aos principais recursos da página.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row align-items-center">
+                                            <div class="col-3">
+                                                <img src="libs/img/_template/btn-home.png" class="img-fluid"
+                                                    style="max-width: 56px;">
+                                            </div>
+                                            <div class="col">
+                                                Direciona ao início do curso.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-20">
+                                        <div class="row align-items-center">
+                                            <div class="col-3">
+                                                <img src="libs/img/_template/btn-menu.png" class="img-fluid"
+                                                    style="max-width: 56px;">
+                                            </div>
+                                            <div class="col">
+                                                Menu com a relação das seções da unidade curricular.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-20">
+                                        <div class="row align-items-center">
+                                            <div class="col-3">
+                                                <img src="libs/img/_template/btn-help.png" class="img-fluid"
+                                                    style="max-width: 56px;">
+                                            </div>
+                                            <div class="col">
+                                                Exibe a tela de ajuda.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-20">
+                                        <div class="row align-items-center">
+                                            <div class="col-3">
+                                                <img src="libs/img/_template/btn-font.png" class="img-fluid"
+                                                    style="max-width: 56px;">
+                                            </div>
+                                            <div class="col">
+                                                Aumenta ou diminui o tamanho da fonte.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-20">
+                                        <div class="row align-items-center">
+                                            <div class="col-3">
+                                                <img src="libs/img/_template/btn-contraste.png" class="img-fluid"
+                                                    style="max-width: 56px;">
+                                            </div>
+                                            <div class="col">
+                                                Ajusta o contraste da tela.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ajuda -->
+
+            <!-- Glossário -->
+            <div class="modal fade" id="exampleModal-5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title center" id="exampleModalLabel">Glossário</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                style="margin: 0"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Créditos -->
+            <div class="modal fade" id="exampleModal-6" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title center" id="exampleModalLabel">Créditos</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                style="margin: 0"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="col-md-12 pb-2">
+                                        <p><strong>CONFEDERAÇÃO NACIONAL DA INDÚSTRIA – CNI</strong></p>
+                                        <p><em>Robson Braga de Andrade</em><br>Presidente</p>
+                                    </div>
+
+
+
+
+
+                                    <p><strong>DIRETORIA DE EDUCAÇÃO E TECNOLOGIA – DIRET</strong></p>
+                                    <p><em>Rafael Esmeraldo Lucchesi Ramacciotti</em><br>Diretor de Educação e
+                                        Tecnologia
+                                    </p>
+                                    <p><strong>SERVIÇO NACIONAL DE APRENDIZAGEM INDUSTRIAL – SENAI – CONSELHO
+                                            NACIONAL</strong></p>
+                                    <p><em>Robson Braga de Andrade</em><br>Presidente</p>
+                                    <p><strong>SENAI – DEPARTAMENTO NACIONAL</strong></p>
+                                    <p><em>Rafael Esmeraldo Lucchesi Ramacciotti</em><br>Diretor-Geral</p>
+                                    <p><em>Gustavo Leal Sales Filho</em><br>Diretor de Operações</p>
+                                    <p><strong>SENAI – DEPARTAMENTO NACIONAL<br>UNIDADE DE EDUCAÇÃO PROFISSIONAL E
+                                            TECNOLÓGICA – UNIEP</strong></p>
+                                    <p><em>Felipe Esteves Morgado</em><br>Gerente Executivo</p>
+                                    <p><em>Luiz Eduardo Leão</em><br>Gerente de Tecnologias Educacionais</p>
+                                    <p><em>Anna Christina Theodora Aun de Azevedo Nascimento</em><br>
+                                        <em>Adriana Barufaldi</em><br>
+                                        <em>Bianca Starling Rosauro de Almeida</em><br>
+                                        <em>Laise Caldeira Pedroso</em><br> Coordenação Geral de Desenvolvimento dos
+                                        Recursos Didáticos Nacionais
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>SENAI - DEPARTAMENTO REGIONAL DE SÃO PAULO</strong></p>
+                                    <p><em>Ricardo Figueiredo Terra</em><br>Diretor Regional</p>
+                                    <p><em>Cassia Regina Souza da Cruz</em><br>Gerente de Educação</p>
+                                    <p><em>Izabel Rego de Andrade</em><br>Supervisora do Centro SENAI de Tecnologias
+                                        Educacionais
+                                    </p>
+                                    <p><em>Claudia Baroni Savini Ferreira</em><br>Coordenação do Desenvolvimento do
+                                        Curso
+                                    </p>
+                                    <p><em>Vitoria Stefany Bessera Pinho​​</em><br>
+                                        <em>Wilson Jose de Santana</em>​<br>Elaboração de Conteúdo
+                                    </p>
+                                    <p><em>Adilson Moreira Damasceno</em><br>Orientador de Práticas de Educação a
+                                        Distância</p>
+
+                                    <p><em>Paula Cristina Bataglia Buratini​</em><br>Coordenação da Produção do Curso
+                                    </p>
+                                    <p><em>Neide Araujo​</em><br>Design Educacional</p>
+                                    <p><em>Cleriston Ribeiro de Azevedo​</em><br>
+                                        <em>Fabiano José Moura​</em>​<br>
+                                        <em>Juliana Rumi Fujishima</em>​<br>Ilustrações
+                                    </p>
+                                    <p><em>Camila Ciarini Dias</em><br>Produção e Edição de Vídeos</p>
+                                    <p><em>Aldo Toma Junior</em><br>Web Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </main>
+    
+      
+
+
+
+
+
+    <!-- ======= Footer ======= -->
+    <footer class="border-top fixed-bottom bg-blue1">
+        <div class="d-flex justify-content-evenly  align-items-center container">
+            <div class="col-sm-4 d-flex justify-content-end">
+                <!-- <i class='bx bx-fade-left-hover bxs-left-arrow-circle bx-md copyright'></i> -->
+            </div>
+            <div class="col-sm-4 d-flex justify-content-center">
+                <p id="textFooter" class="mx-auto mt-3 copyright">© SENAI 2023</p>
+            </div>
+            <div class="col-sm-4 d-flex justify-content-start">
+                <a style="color:white; visibility: hidden;" href="aula-2.html">
+                    <i class='bx bx-fade-right-hover bxs-right-arrow-circle bx-md copyright'></i></a>
+            </div>
+        </div>
+
+    </footer>
+    <!-- ===== End Footer ===== -->
+
+    <!-- Vendor JS Files -->
+    <!-- <script src="index.js"></script> -->
+    <script src="libs/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="libs/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="libs/vendor/swiper/swiper-bundle.js"></script>
+    <!-- <script src="libs/vendor/waypoints/noframework.waypoints.js"></script> -->
+
+
+    <script src="libs/vendor/text-marker/js/index.js"></script>
+    <script src="libs/vendor/video/video.popup.js"></script>
+    <script src="libs/js/exercicios.js"></script>
+    <script src="libs/vendor/audioplayer/js/audioplayer.js"></script>
+    <!-- <script src="libs/vendor/bootstrap/js/popper.min.js"></script> -->
+    <script src="libs/vendor/scrollup/jquery.enllax.min.js"></script>
+    <script src="libs/vendor/youtube/youtube-chapters.js"></script>
+
+    <script src="libs/vendor/video/html-video.js" type="text/javascript"></script>
+    <script src="libs/vendor/video/youtube-overlay.js" type="text/javascript"></script>
+
+    <!-- Menu Floating -->
+    <script src="libs/vendor/menu/js/menu.js"></script>
+    <!-- Template Main JS File -->
+    <script src="libs/js/main.js"></script>
+
+    <script>
+        jQuery(function ($) {
+            $('#youtube').spidochetube({
+                key: 'AIzaSyDk8TwPawqft0zou4OyDZYu8y2eNFUpe94',
+                id: 'PLPli_KFbLinHbdFiK_W50CC1LztutsKE2',
+                // id          : 'UU_x5XG1OV2P6uZZ5FSM9Ttw',
+                max_results: 8,
+                autoplay: 1,
+                complete: function () {
+                    // Initialize the scroll plugin after the playlist is ready
+                    $('#spidochetube_list').niceScroll({
+                        cursorcolor: '#666',
+                        cursorborder: '0px solid #fff',
+                        autohidemode: false
+                    });
+                }
+            });
+        })
+    </script>
+
+</body>
+
+</html>
